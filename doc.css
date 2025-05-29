@@ -1,25 +1,25 @@
-/* Smooth scrolling for nav links */
+
 html {
   scroll-behavior: smooth;
 }   
 
 body {
   background-image: url('2025-mainimage.png');
-  background-size: contain;              /* Show the full image */
-  background-position: right center;      /* Move image to the right */
+  background-size: contain;             
+  background-position: right center;     
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #222;                 /* Fallback color for empty space */
+  background-color: #222;                
   min-height: 100vh;
   margin: 0;
   padding: 0;
   color: white;
+  font: family Arial, sans-serif;
 }
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 254, 254, 0); /* semi-transparent black overlay */
   pointer-events: none;
   z-index: -1;
 }
@@ -44,12 +44,18 @@ h1 {
 }
 
 h2 {
-  margin-left: 300px;
-  margin-right: 300px;
+  margin: 10px 0;
   background-color: rgb(187, 14, 178);
   font-size: 20px;
   text-align: center;
-  margin-top: 5px;
+  padding: 0 10px;
+}
+
+h4 {
+  margin: 10px 0;
+  font-size: 20px;
+  text-align: center;
+  padding: 0 10px;
 }
 
 h2:hover {
@@ -69,9 +75,8 @@ h3 {
 p {
   font-size: 15px;
   text-align: center;
-  margin-top: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: 20px 0;
+  padding: 0 10px;
 }
 
 .projects {
@@ -97,10 +102,11 @@ p {
 }
 
 .navbar {
+  
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #9d0caa;
+  background-color: #8d0a99f1;
   z-index: 1000;
   overflow: hidden;
   display: flex;
@@ -112,27 +118,32 @@ p {
   padding: 14px 20px;
   text-decoration: none;
   display: block;
+  border-radius: 20px;
 }
 
 .navbar a:hover {
-  background-color: #8324d1;
+  background-color: rgb(141, 2, 255);
+  
 }
 
 #Home,
 #About,
 #Projects,
 #Contacts {
-  height: 100vh;               /* Each section fills the viewport exactly */
-  scroll-margin-top: 70px;     /* Offset for fixed navbar (adjust if needed) */
+  min-height: 100vh;
+  scroll-margin-top: 70px;
   display: flex;
   flex-direction: column;
-  justify-content: center;     /* Vertically center content */
-  align-items: center;         /* Horizontally center content */
-  margin: 0;
-  padding: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 24px 5vw;
   box-sizing: border-box;
-  
+  border-radius: 16px;
+  width: 90vw;
+  max-width: 900px;
 }
+
 #fb {
   bottom: 50px;
   margin-top: 60;
@@ -163,4 +174,28 @@ h4{
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
+}
+
+img, .projects img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  #Home,
+  #About,
+  #Projects,
+  #Contacts {
+    padding: 12px 2vw;
+    width: 98vw;
+    border-radius: 8px;
+  }
+  h2, h4 {
+    font-size: 18px;
+    padding: 0 5px;
+  }
+  p {
+    font-size: 14px;
+    padding: 0 5px;
+  }
 }
